@@ -4,7 +4,7 @@ Animoto: Distributed System to convert Images to Video using Amazon AWS
 
 Animoto is a cloud-based service which convert images into videos using a distributed system.  I have used Amazon AWS to make the clusters.  The concept is i use Instagram to take image URL and i keep these URL as messages in Amazon SQS ( SQS is Queueing System in Amazon). The workers (refers to data nodes in Hadoop) will fetch these messages (URL) from SQS queue and download images.
 Linux command line utility called FFMEG will convert images to video. I combined all the videos in worker to get a single video. 
-To provide 100 percent efficiency SQS keep multiple copies of same messages. 
+To provide 100 percent efficiency SQS keeps multiple copies of same messages. 
 So workers might read same messages again and again. Inoder to overcome that, I kept a DynamoDB in between SQS and worker. 
 So when worker picks a messages job from SQS they will update the DynamoDB with a unique message ID  to avoid duplicate fetching. 
 When next worker comes it makes sure that URL which worker is taken is not already processed
