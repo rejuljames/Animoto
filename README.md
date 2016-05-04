@@ -14,5 +14,14 @@ Disk:10GB<br />
 Kernel Version:3.13.0-74-generic<br />
 
 
+Files
+------------------
+Instagram.py: Get Image URLS from Instagram and saves to File<br />
+client.py: Read the URL file and push the URLS to Amazon SQS<br />
+db.py: Create a DynamoDB Table<br />
+Worker: Worker get messages from SQS queue and download the images and convert the images to Video<br />
+
+
+
 
 
