@@ -1,6 +1,6 @@
 conf = {
-  "sqs-access-key": "*******",
-  "sqs-secret-key": "*******",
+  "sqs-access-key": os.environ['aws_access_key_id'],
+  "sqs-secret-key": os.environ['aws_secret_access_key'],
   "sqs-queue-name": "rejul1",
   "sqs-region": "us-west-2",
   "sqs-path": "sqssend"
