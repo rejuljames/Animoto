@@ -5,8 +5,8 @@ from boto.sqs.message import Message
 //Accesing dynamoDB 
 conn = boto.dynamodb.connect_to_region(
         'us-west-2',
-        aws_access_key_id="AKIAINP7RHE67XREYLIA",
-        aws_secret_access_key="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")
+        aws_access_key_id=os.environ['aws_access_key'],
+        aws_secret_access_key=os.environ['aws_secret_access_key'])
 conn.list_tables()
 message_table_schema = conn.create_schema(
         hash_key_name='jobid',
